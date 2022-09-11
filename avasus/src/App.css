@@ -50,6 +50,10 @@
   background-color: var(--grey);
 }
 
+.bgDarkGrey {
+  background-color: var(--navlinkHover);
+}
+
 .red {
   color: var(--footer-bg-1)
 }
@@ -76,6 +80,10 @@
 
 .mb25 {
   margin-bottom: 25px;
+}
+
+.mb100 {
+  margin-bottom: 100px;
 }
 
 .pb20 {
@@ -110,6 +118,10 @@
   font-size: 1.25rem;
 }
 
+.fontUltraSmall {
+  font-size: 0.8125rem;
+}
+
 .fw400 {
   font-weight: 400;
 }
@@ -120,6 +132,10 @@
 
 .textShadow {
   text-shadow: 2px 2px 2px rgba(.2, .2, .2, .5);
+}
+
+#mouseDefault {
+  cursor: default;
 }
 
 @media (max-width: 1200px) {
@@ -147,6 +163,10 @@
 
   .mt60 {
     margin-top: 30px;
+  }
+
+  .mb100 {
+    margin-bottom: 50px;
   }
 
   .fontLarge {
