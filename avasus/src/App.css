@@ -2,6 +2,9 @@
   --footer-bg-1: #F6303F;
   --footer-bg-2: #2F2E41;
   --white: #FFFFFF;
+  --navlink: #2F2E41;
+  --navlinkHover: #707070;
+  --grey: #F5F5F7;
 }
 
 * {
@@ -12,8 +15,43 @@
   font-size: 1rem;
 }
 
+.containerPages {
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.min_height {
+  min-height: 75%;
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.start-line {
+  align-items: flex-start;
+}
+
+.column {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .white {
   color: var(--white);
+}
+
+.bgWhite {
+  background-color: var(--white);
+}
+
+.bgGrey {
+  background-color: var(--grey);
+}
+
+.red {
+  color: var(--footer-bg-1)
 }
 
 .bgRed {
@@ -44,6 +82,10 @@
   padding-bottom: 20px;
 }
 
+.fontXL {
+  font-size: 5rem;
+}
+
 .fontLarge {
   font-size: 2rem;
 }
@@ -52,8 +94,20 @@
   font-size: 1.8rem;
 }
 
+.fontMedium2 {
+  font-size: 1.5rem;
+}
+
+.fontMedium {
+  font-size: 1.625rem;
+}
+
 .fontSmall {
   font-size: 1.125rem;
+}
+
+.fontSmall2 {
+  font-size: 1.25rem;
 }
 
 .fw400 {
@@ -62,6 +116,28 @@
 
 .fw600 {
   font-weight: 600;
+}
+
+.textShadow {
+  text-shadow: 2px 2px 2px rgba(.2, .2, .2, .5);
+}
+
+@media (max-width: 1200px) {
+  .fontXL {
+    font-size: 2.5rem;
+  }
+
+  .fontMedium2 {
+    font-size: 1.2rem;
+  }
+
+  .fontSmall2 {
+    font-size: 0.875rem;
+  }
+
+  .fontMedium {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -79,5 +155,23 @@
 
   .fontMediumLarge {
     font-size: 1.4rem;
+  }
+
+  .fontXL {
+    font-size: 1.75rem;
+  }
+
+  .fontMedium {
+    font-size: .875rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .fontXL {
+    font-size: 1rem;
+  }
+
+  .fontMedium {
+    font-size: .5rem;
   }
 }

@@ -1,0 +1,100 @@
+.containerSlider {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.marginSlider {
+    margin-bottom: 260px;
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../assets/NextArrow.svg') !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../../assets/PrevArrow.svg') !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.carousel-indicators {
+    background-image: url('../../assets/sliderIndicator.svg') !important;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 30px;
+    background-size: 120px;
+}
+
+.carousel-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 1900px) {
+    .imgSlider {
+        width: 500px;
+    }
+
+    .containerSlider {
+        gap: 40px;
+    }
+
+    .marginSlider {
+        margin-bottom: 180px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .imgSlider {
+        width: 300px;
+    }
+
+    .imgSlider2 {
+        width: 2px;
+    }
+
+    .containerSlider {
+        gap: 10px;
+    }
+
+    .marginSlider {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 800px) {
+    .imgSlider {
+        width: 150px;
+    }
+
+    .imgSlider2 {
+        width: 1px;
+    }
+
+    .containerSlider {
+        gap: 10px;
+    }
+
+    .marginSlider {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .imgSlider {
+        width: 100px;
+    }
+
+    .imgSlider2 {
+        width: .5px;
+    }
+
+    .marginSlider {
+        margin-bottom: 5px;
+    }
+}

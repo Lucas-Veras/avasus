@@ -1,0 +1,83 @@
+.logoPrincipal {
+    width: 200px;
+}
+
+.sombra {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#inputSearch {
+    max-width: 100%;
+    border-radius: 20px;
+    outline: none;
+    text-indent: 40px;
+    background-image: url('../../assets/lupa.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 15px;
+    background-position-y: 8px;
+    background-color: rgba(112, 112, 112, 0.1);
+    border: none;
+    padding: 6px;
+    transition: 1s;
+    box-shadow: none;
+}
+
+.navlink {
+    color: var(--navlink);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.navlink:hover {
+    color: var(--navlinkHover);
+}
+
+.navButton {
+    text-decoration: none;
+    padding: 10px 40px;
+    border-radius: 20px;
+}
+
+.navButton1 {
+    color: var(--navlinkHover);
+    border: 1px solid var(--navlinkHover);
+    transition: .5s;
+}
+
+.navButton1:hover {
+    background-color: var(--navlinkHover);
+    color: var(--white);
+}
+
+.navButton2 {
+    background-color: var(--navlinkHover);
+    border: 1px solid var(--white);
+    transition: .5s;
+}
+
+.navButton2:hover {
+    color: var(--navlinkHover);
+    background-color: var(--white);
+    border: 1px solid var(--navlinkHover);
+}
+
+#inputSearch:focus {
+    outline: auto;
+}
+
+@media (max-width: 1400px) {
+    #inputSearch {
+        max-width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    .navButton {
+        display: block;
+        max-width: 100%;
+    }
+
+    .logoPrincipal {
+        width: 140px;
+    }
+}

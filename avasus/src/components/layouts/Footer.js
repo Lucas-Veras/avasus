@@ -1,10 +1,10 @@
-import './Footer.css'
-import lais from '../../assets/lais.svg'
-import ufrn from '../../assets/ufrn.svg'
-import facebook from '../../assets/facebook.svg'
-import instagram from '../../assets/instagram.svg'
-import twitter from '../../assets/twitter.svg'
-import { Link } from 'react-router-dom'
+import './Footer.css';
+import lais from '../../assets/lais.svg';
+import ufrn from '../../assets/ufrn.svg';
+import facebook from '../../assets/facebook.svg';
+import instagram from '../../assets/instagram.svg';
+import twitter from '../../assets/twitter.svg';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
