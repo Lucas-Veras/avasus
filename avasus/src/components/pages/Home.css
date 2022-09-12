@@ -97,6 +97,16 @@
     padding: 8px 60px;
 }
 
+.containerMarginTop {
+    margin-top: 100px;
+}
+
+@media (max-width: 1400px) {
+    .containerMarginTop {
+        margin-top: 90px;
+    }
+}
+
 @media (max-width: 1200px) {
     .parceirosContainer {
         display: block;
@@ -113,10 +123,8 @@
     }
 
     .cursoContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-        margin-bottom: 30px;
+        flex-direction: column;
     }
+
+    
 }

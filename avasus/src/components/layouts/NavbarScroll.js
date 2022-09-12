@@ -8,7 +8,7 @@ import './NavbarScroll.css'
 
 const NavbarScroll = () => {
   return (
-    <Navbar className='bgWhite ps-xxl-4 ps-xl-2 ps-2 pm-4 pt-4 pb-4 pe-xxl-5 pe-2 sombra' expand="xxl">
+    <Navbar className='bgWhite ps-xxl-4 ps-xl-2 ps-2 pm-4 pt-4 pb-4 pe-xxl-5 pe-2 sombra' expand="xxl" fixed="top">
       <Container fluid>
         <Navbar.Brand className='ps-xxl-4 ps-2 me-3'><Link to='/'><img src={logo} alt="Avasus" className='logoPrincipal'/></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

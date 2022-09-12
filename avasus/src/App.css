@@ -4,7 +4,9 @@
   --white: #FFFFFF;
   --navlink: #2F2E41;
   --navlinkHover: #707070;
+  --breadcrumbGrey: #808080;
   --grey: #F5F5F7;
+  --qtdPags: #2F2E41;
 }
 
 * {
@@ -13,29 +15,18 @@
   box-sizing: border-box;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 1rem;
+  line-height: 20px;
 }
 
 .containerPages {
   max-width: 1100px;
   text-align: center;
   margin: 0 auto;
+  padding: 20px;
 }
 
-.min_height {
-  min-height: 75%;
-}
-
-.start {
-  justify-content: flex-start;
-}
-
-.start-line {
-  align-items: flex-start;
-}
-
-.column {
-  flex-direction: column;
-  justify-content: flex-start;
+#marginTopPages {
+  margin-top: 120px;
 }
 
 .white {
@@ -48,6 +39,20 @@
 
 .bgGrey {
   background-color: var(--grey);
+}
+
+#colorBreadcrumb {
+  color: var(--breadcrumbGrey) !important;
+  text-decoration: none !important;
+}
+
+#colorBreadcrumb:hover {
+  color: var(--navlinkHover) !important;
+  text-decoration: underline !important;
+}
+
+.colorQtdPages {
+  color: var(--qtdPags);
 }
 
 .bgDarkGrey {
@@ -111,7 +116,7 @@
 }
 
 .fontSmall {
-  font-size: 1.125rem;
+  font-size: 1.125rem !important;
 }
 
 .fontSmall2 {
@@ -151,12 +156,24 @@
     font-size: 0.875rem;
   }
 
+  .fontSmall {
+    font-size: .8rem !important;
+  }
+
   .fontMedium {
     font-size: 1.2rem;
   }
 }
 
 @media (max-width: 800px) {
+  .fontMedium2 {
+    font-size: 0.875rem;
+  }
+
+  .fontSmall {
+    font-size: .7rem !important;
+  }
+
   .mb60 {
     margin-bottom: 30px;
   }

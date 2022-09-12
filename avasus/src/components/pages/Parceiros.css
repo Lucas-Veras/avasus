@@ -1,0 +1,111 @@
+.breadcrumb-item a {
+    color: var(--breadcrumbGrey) !important;
+    text-decoration: none !important;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline !important;
+}
+
+.breadcrumb-item {
+    color: #000000 !important;
+}
+
+.breadcrumb-item::before {
+    color: #000000 !important;
+}
+
+.parceirosContainerPage {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1100px;
+    gap: 60px 30px;
+    margin: 0 auto;
+}
+
+.parceiroImg {
+    max-width: 350px;
+    height: 200px;
+    object-fit: scale-down;
+    position: relative;
+}
+
+.barraCima {
+    margin-top: 10px;
+    position: relative;
+}
+
+.barraCima::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: var(--footer-bg-1);
+    display: block;
+    top: -10px
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+}
+
+.page-item {
+    margin-left: 10px;
+    border-radius: 5px !important;
+}
+
+.page-item a {
+    border: none !important;
+    border-radius: 5px;
+    background-color: #F1DADB !important;
+    color: #B9232F;
+}
+
+.page-item a:hover {
+    color: inherit !important;
+    color: #B9232F !important;
+    background-color: #e7b8bb !important;
+}
+
+.page-item a:focus {
+    outline: none !important;
+    box-shadow: 2px 2px 2px #b9232f70 !important;
+    color: #B9232F !important;
+}
+
+.ativoPaginacao a {
+    background-color: #B9232F !important;
+    color: var(--white);
+}
+
+.ativoPaginacao a:focus {
+    color: var(--white) !important;
+}
+
+@media (max-width: 1200px) {
+    .parceirosContainerPage {
+        grid-template-columns: 350px 350px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .parceirosContainerPage {
+        grid-template-columns: 180px;
+        gap: 0px;
+    }
+
+    .parceiroImg {
+        width: 100%;
+        max-width: 100%;
+        object-fit: scale-down;
+        position: relative;
+    }
+
+    .barraCima {
+        max-width: 100%;
+    }
+}
