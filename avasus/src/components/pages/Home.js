@@ -76,9 +76,9 @@ const Home = () => {
               <img src={relogio} alt="duração" />
               <p className='fw400 alignText'>{curso.duracao}</p>
 
-              <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} />
-              <p className='fw400 alignText'>{(curso.avaliacao).replace('.', ',')}</p>
-              <Link to='' className='cursoButton bgDarkGrey white fontSmall2 fw600'>Ver módulo</Link>
+              <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} size={25} />
+              <p className='fw400 alignText'>{String((curso.avaliacao)).replace('.', ',')}</p>
+              <Link to={`/modulosEducacionais/${curso.id}`} className='cursoButton bgDarkGrey white fontSmall2 fw600'>Ver módulo</Link>
             </div>
           ))}
         </div>

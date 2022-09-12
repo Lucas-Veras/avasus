@@ -26,9 +26,9 @@ const Footer = () => {
                     <div className='footerLinks'>
                         <Link to='/' className='white'>Início</Link>
                         <Link to='/' className='white'>Sobre Nós</Link>
-                        <Link to='/' className='white'>Módulos</Link>
-                        <Link to='/' className='white'>Parceiros</Link>
-                        <Link to='/' className='white'>Transparência</Link>
+                        <Link to='/modulosEducacionais' className='white'>Módulos</Link>
+                        <Link to='/parceiros' className='white'>Parceiros</Link>
+                        <Link to='/transparencia' className='white'>Transparência</Link>
                     </div>
                 </section>
                 <section>

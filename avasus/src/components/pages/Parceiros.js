@@ -15,6 +15,8 @@ const Parceiros = () => {
   const endIndex = startIndex + parceiroPerPage;
   const currentParceiros = parceiros.slice(startIndex, endIndex);
 
+  const qtdAtualParceiros = endIndex < currentParceiros.length ? currentParceiros.length : endIndex
+
   useEffect(() => {
     fetch("http://localhost:3004/parceiros")
       .then((res) => res.json())
@@ -33,31 +35,39 @@ const Parceiros = () => {
       </Breadcrumb>
       <section className='text-start'>
         <h1 className='red fontMediumLarge fw600 mb-2'>Nossos parceiros</h1>
-        <p className='fw400 fst-italic colorQtdPages mb-2'>{endIndex} de {parceiros.length} resultados</p>
-        <div className='parceirosContainerPage mb-5'>
-          {!removeLoading && <Loading/>}
+        <p className='fw400 fst-italic colorQtdPages mb-2'>{qtdAtualParceiros} de {parceiros.length} resultados</p>
+
+        {!removeLoading &&
+          <div className='text-center'>
+            <Loading />
+          </div>
+        }
+
+        <div className='parceirosContainerPage gapParceiros mb-5'>
           {currentParceiros.map((parceiro) => (
-            <div key={parceiro.id} className='text-center'>
+            <div key={parceiro.id} className='text-center box'>
               <img src={parceiro.capa} alt={parceiro.titulo} className='parceiroImg' />
               <h2 className='fontMedium2 fw600 barraCima'>{parceiro.titulo}</h2>
             </div>
           ))}
         </div>
+
         <div className='mb-5 paginacao'>
           <Pagination>
             <Pagination.Prev onClick={() => {
               if (currentPage !== 0)
                 setCurrentPage(Number(currentPage - 1))
             }} />
-            
-            <Pagination.Item  className='ativoPaginacao' onClick={() => setCurrentPage(Number(currentPage))}>{currentPage + 1}</Pagination.Item>
-            <Pagination.Item onClick={() => setCurrentPage(Number(currentPage + 1))}>{currentPage + 2}</Pagination.Item>
-            <Pagination.Item onClick={() => setCurrentPage(Number(currentPage + 2))}>{currentPage + 3}</Pagination.Item>
 
-            <Pagination.Next onClick={() => {
+            <Pagination.Item className='ativoPaginacao' onClick={() => setCurrentPage(Number(currentPage))}>{currentPage + 1}</Pagination.Item>
+
+            {currentPage + 2 <= pages && <Pagination.Item onClick={() => setCurrentPage(Number(currentPage + 1))}>{currentPage + 2}</Pagination.Item>}
+            {currentPage + 3 <= pages && <Pagination.Item onClick={() => setCurrentPage(Number(currentPage + 2))}>{currentPage + 3}</Pagination.Item>}
+
+            {currentPage + 1 !== pages && <Pagination.Next onClick={() => {
               if (currentPage !== pages - 1)
                 setCurrentPage(Number(currentPage + 1))
-            }} />
+            }} />}
           </Pagination>
         </div>
       </section>

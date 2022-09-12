@@ -22,7 +22,7 @@
   max-width: 1100px;
   text-align: center;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 #marginTopPages {
@@ -59,6 +59,10 @@
   background-color: var(--navlinkHover);
 }
 
+.DarkGrey {
+  color: var(--navlinkHover);
+}
+
 .red {
   color: var(--footer-bg-1)
 }
@@ -73,6 +77,10 @@
 
 .mb60 {
   margin-bottom: 60px;
+}
+
+.mt20 {
+  margin-top: 20px;
 }
 
 .mb20 {
@@ -127,12 +135,20 @@
   font-size: 0.8125rem;
 }
 
+.fontNormal {
+  font-size: 1rem;
+}
+
 .fw400 {
   font-weight: 400;
 }
 
 .fw600 {
   font-weight: 600;
+}
+
+.fw700 {
+  font-weight: 700;
 }
 
 .textShadow {
@@ -144,6 +160,10 @@
 }
 
 @media (max-width: 1200px) {
+  .containerPages {
+    padding: 20px;
+  }
+
   .fontXL {
     font-size: 2.5rem;
   }

@@ -1,13 +1,14 @@
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useState, useEffect } from 'react'
-import participantes from '../../assets/participantes.svg'
+import participantes from '../../assets/participantes.svg';
 import relogio from '../../assets/relogio.svg';
+import { Rating } from 'react-simple-star-rating';
 import { Link } from 'react-router-dom';
 import Loading from '../layouts/Loading';
-import { Rating } from 'react-simple-star-rating'
+import Pagination from 'react-bootstrap/Pagination';
+import './ModulosEducacionais.css';
 
 const ModulosEducacionais = () => {
-  //http://localhost:3004/cursos?cateroria=Covid%2019
   const [cursos, setCursos] = useState([])
   const [selectedTab, setSelectedTab] = useState(1)
   const [removeLoading, setRemoveLoading] = useState(false)
@@ -38,7 +39,7 @@ const ModulosEducacionais = () => {
       buscarCursos(`${url}WebPalestras`)
     } else if (index === 6) {
       buscarCursos(`${url}Sistema%20prisional`)
-    } else if (index === 7){
+    } else if (index === 7) {
       buscarCursos(`${url}OPAS`)
     }
   }
@@ -57,6 +58,7 @@ const ModulosEducacionais = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        setCurrentPage(0)
         setCursos(data)
         setRemoveLoading(true)
       })
@@ -72,7 +74,7 @@ const ModulosEducacionais = () => {
       </Breadcrumb>
       <section className='text-center'>
         <h1 className='red fontMediumLarge fw600 mb-5'>Módulos Educacionais</h1>
-        <div className='filtrosModulos mb-4'>
+        <div className='filtrosModulos responsive mb-4'>
           <button onClick={() => selectTab(1)} className={selectedTab === 1 ? "fontSmall ativo fw600" : "fontSmall fw600"}>Covid 19</button>
           <button onClick={() => selectTab(2)} className={selectedTab === 2 ? "fontSmall ativo fw600" : "fontSmall fw600"}>Sífilis e outras Ist's</button>
           <button onClick={() => selectTab(3)} className={selectedTab === 3 ? "fontSmall ativo fw600" : "fontSmall fw600"}>Preceptoria</button>
@@ -82,30 +84,58 @@ const ModulosEducacionais = () => {
           <button onClick={() => selectTab(7)} className={selectedTab === 7 ? "fontSmall ativo fw600" : "fontSmall fw600"}>OPAS</button>
         </div>
         <div className='text-start'>
-          <p className='fw400 fst-italic colorQtdPages mb-4'>{endIndex} de {cursos.length} resultados</p>
+          <p className='fw400 fst-italic colorQtdPages mb-4'>{endIndex < currentCursos.length ? currentCursos.length : endIndex} de {cursos.length} resultados</p>
         </div>
-        <div>
-          {!removeLoading && <Loading />}
-          {cursos && cursos.map((curso) => (
-            <div key={curso.id} className='cursoContainer bgGrey'>
-              <img src={curso.capa} alt="capa do curso" className='cursoImagem' />
+        {!removeLoading && <Loading />}
+        <div className='parceirosContainerPage gapCursos  mb-5'>
+          {currentCursos && currentCursos.map((curso) => (
+            <div key={curso.id} className='marginBoxCurso'>
+              <img src={curso.capa} alt="capa do curso" className='parceiroImg mb-2' />
 
-              <div className='cursoTitle'>
-                <h2 className='fontSmall2 fw600'>{curso.titulo}</h2>
+              <div className='cursoTitle mb-2'>
+                <h2 className='fontMedium2 fw600 mb-2'>{curso.titulo}</h2>
                 <p className='fontUltraSmall fw600 red'>{curso.parceiros}</p>
               </div>
 
-              <img src={participantes} alt="matriculados" />
-              <p className='fw400 alignText'>{curso.matriculados}</p>
+              <div className='containerCursoInfo mb-3'>
+                <div className='containerElementsInfo'>
+                  <img src={participantes} alt="matriculados" />
+                  <p className='fw400 alignText'>{curso.matriculados}</p>
 
-              <img src={relogio} alt="duração" />
-              <p className='fw400 alignText'>{curso.duracao}</p>
-
-              <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} />
-              <p className='fw400 alignText'>{(curso.avaliacao).replace('.', ',')}</p>
-              <Link to='' className='cursoButton bgDarkGrey white fontSmall2 fw600'>Ver módulo</Link>
+                  <img src={relogio} alt="duração" />
+                  <p className='fw400 alignText'>{curso.duracao}</p>
+                </div>
+                <div className='containerElementsInfo'>
+                  <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} size={22} />
+                  <p className='fw400 alignText'>{(curso.avaliacao).replace('.', ',')}</p>
+                </div>
+              </div>
+              <div className='text-start'>
+                <p className='textResumo'>{curso.resumo}</p>
+              </div>
+              <div className='text-end'>
+                <Link to={`${curso.id}`} className='DarkGrey linkCurso fw600'>Ver Curso</Link>
+              </div>
             </div>
           ))}
+        </div>
+        <div className='mb-5 paginacao'>
+          <Pagination>
+            <Pagination.Prev onClick={() => {
+              if (currentPage !== 0)
+                setCurrentPage(Number(currentPage - 1))
+            }} />
+
+            <Pagination.Item className='ativoPaginacao' onClick={() => setCurrentPage(Number(currentPage))}>{currentPage + 1}</Pagination.Item>
+
+            {currentPage + 2 <= pages && <Pagination.Item onClick={() => setCurrentPage(Number(currentPage + 1))}>{currentPage + 2}</Pagination.Item>}
+            {currentPage + 3 <= pages && <Pagination.Item onClick={() => setCurrentPage(Number(currentPage + 2))}>{currentPage + 3}</Pagination.Item>}
+
+            {currentPage + 1 !== pages && <Pagination.Next onClick={() => {
+              if (currentPage !== pages - 1)
+                setCurrentPage(Number(currentPage + 1))
+            }} />}
+          </Pagination>
         </div>
       </section>
     </section>

@@ -8,6 +8,7 @@ import Home from './components/pages/Home';
 import Parceiros from './components/pages/Parceiros';
 import Transparencia from './components/pages/Transparencia';
 import ModulosEducacionais from './components/pages/ModulosEducacionais';
+import Curso from './components/pages/Curso';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/parceiros" element={<Parceiros/>}/>
           <Route path="/transparencia" element={<Transparencia/>}/>
           <Route path="/modulosEducacionais" element={<ModulosEducacionais/>}/>
+          <Route path="/modulosEducacionais/:id" element={<Curso/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

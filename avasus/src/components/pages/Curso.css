@@ -1,0 +1,81 @@
+.marginCurso {
+    margin-top: 100px;
+}
+
+.breadcrumbColor ol li a{
+    color: #E0E0E0 !important;
+}
+
+.breadcrumbColor ol li,  .breadcrumbColor ol li::before{
+    color: var(--white) !important;
+}
+
+.cursoTitles {
+    background-image: url("../../assets/capaCurso.png");
+    background-repeat: no-repeat;
+    background-size: 1899px 270px;
+    padding-bottom: 50px;
+}
+
+.textJustify {
+    text-align: justify;
+}
+
+.containerCreditos {
+    display: flex;
+    justify-content: center;
+    gap: 5px 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.creditoBox {
+    width: 250px;
+}
+
+.centralizar {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.boxSingleInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+}
+
+.imgCredito {
+    width: 100%;
+    height: 222px;
+    object-fit: scale-down;
+    position: relative;
+    border-radius: 20px;
+}
+
+@media (max-width: 1400px) {
+    .marginCurso {
+        margin-top: 90px;
+    }
+
+    .boxSingleInfo {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .boxSingleInfo {
+        flex-direction: column;
+        margin-left: 0px;
+    }
+
+    .cursoTitles {
+        padding-bottom: 0px;
+    }
+
+    .containerCreditos {
+        gap: 5px;
+    }
+}
