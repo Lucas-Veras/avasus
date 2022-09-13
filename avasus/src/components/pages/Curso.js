@@ -39,7 +39,7 @@ const Curso = () => {
             <section className='containerPages mb100'>
                 <h2 className='red fontLarge fw600 mb-5'>Informações Gerais do Curso</h2>
 
-                <div className='containerElementsInfo centralizar mb-5'>
+                <div className='containerElementsInfo centralizar mb-xxl-5 mb-3'>
                     <div className='boxSingleInfo'>
                         <img src={relogio} alt="duração" />
                         <p className='fw700 fontSmall2 alignText'>{curso.duracao} horas</p>
@@ -78,7 +78,6 @@ const Curso = () => {
                     {creditos.length ? creditos.map((credito) => (
                         <div className='creditoBox' key={credito.titulo}>
                             <img src={credito.capa} alt={credito.titulo} className='imgCredito' />
-                            <p>{credito.titulo}</p>
                         </div>
                     )) : <p>Não possui</p>}
                 </div>

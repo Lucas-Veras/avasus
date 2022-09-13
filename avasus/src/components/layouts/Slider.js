@@ -16,7 +16,7 @@ export default function Slider() {
     };
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect} className='mb-5 containerMarginTop'>
+        <Carousel activeIndex={index} onSelect={handleSelect} className='mb-lg-5 mb-3 containerMarginTop'>
             <Carousel.Item>
                 <img
                     className="d-block w-100"

@@ -1,5 +1,13 @@
-.filtrosModulos {
+.filtrosModulos,
+.cursoContainer,
+.parceirosContainer,
+.cursoTitleBox,
+.cursoInfoBox,
+.boxSingleInfoBox {
     display: flex;
+}
+
+.filtrosModulos {
     flex-direction: row;
     gap: 18px;
 }
@@ -42,7 +50,6 @@
 }
 
 .parceirosContainer {
-    display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
@@ -55,24 +62,35 @@
 }
 
 .cursoContainer {
-    display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 15px;
     padding: 20px;
     border-radius: 20px;
+    gap: 20px;
 }
 
 .cursoImagem {
     border-radius: 20px;
-    max-width: 120px;
+    width: 120px;
     height: 120px;
     Object-fit: cover;
 }
 
+.cursoTitleBox {
+    align-items: center;
+    gap: 15px;
+}
+
 .cursoTitle {
-    max-width: 35ch;
+    width: 35ch;
     text-align: left;
+}
+
+.cursoInfoBox {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px
 }
 
 .alignText {
@@ -97,6 +115,12 @@
     padding: 8px 60px;
 }
 
+.boxSingleInfoBox {
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 .containerMarginTop {
     margin-top: 100px;
 }
@@ -118,13 +142,36 @@
 
     .parceiroContent {
         display: flex;
-        flex-direction: column;
         align-items: center;
     }
 
-    .cursoContainer {
+    .cursoContainer,
+    .cursoTitleBox,
+    .parceiroContent {
         flex-direction: column;
     }
 
-    
+    .cursoTitleBox,
+    .cursoImagem,
+    .cursoTitle,
+    .cursoInfoBox {
+        width: 100%;
+    }
+
+    .cursoImagem {
+        height: auto;
+    }
+
+    .cursoInfoBox {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .ajusteImg,
+    .ajusteImgStar svg {
+        width: 15px;
+    }
+
 }

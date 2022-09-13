@@ -30,11 +30,11 @@
 }
 
 .white {
-  color: var(--white);
+  color: var(--white) ;
 }
 
 .bgWhite {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 
 .bgGrey {
@@ -128,7 +128,7 @@
 }
 
 .fontSmall2 {
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 
 .fontUltraSmall {
@@ -144,7 +144,7 @@
 }
 
 .fw600 {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .fw700 {
@@ -192,6 +192,10 @@
 
   .fontSmall {
     font-size: .7rem !important;
+  }
+
+  .fontSmall2 {
+    font-size: .8rem !important;
   }
 
   .mb60 {

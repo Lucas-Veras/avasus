@@ -52,9 +52,9 @@ const Home = () => {
   return (
     <>
       <Slider />
-      <section className='containerPages mb100'>
+      <section className='containerPages mb-lg-5 mb-3'>
         <h1 className='red fontMediumLarge fw600 mb-4'>Módulos Educacionais</h1>
-        <div className='filtrosModulos mb-5'>
+        <div className='filtrosModulos mb-lg-5 mb-4'>
           <button onClick={() => selectTab(1)} className={selectedTab === 1 ? "fontSmall ativo fw600" : "fontSmall fw600"}>Mais populares</button>
           <button onClick={() => selectTab(2)} className={selectedTab === 2 ? "fontSmall ativo fw600" : "fontSmall fw600"}>Mais bem avaliados</button>
           <button onClick={() => selectTab(3)} className={selectedTab === 3 ? "fontSmall ativo fw600" : "fontSmall fw600"}>Mais recentes</button>
@@ -63,28 +63,35 @@ const Home = () => {
           {!removeLoading && <Loading />}
           {cursos && cursos.map((curso) => (
             <div key={curso.id} className='cursoContainer bgGrey'>
-              <img src={curso.capa} alt="capa do curso" className='cursoImagem' />
-
-              <div className='cursoTitle'>
-                <h2 className='fontSmall2 fw600'>{curso.titulo}</h2>
-                <p className='fontUltraSmall fw600 red'>{curso.parceiros}</p>
+              <div className='cursoTitleBox'>
+                <img src={curso.capa} alt="capa do curso" className='cursoImagem' />
+                <div className='cursoTitle'>
+                  <h2 className='fontSmall2 fw600'>{curso.titulo}</h2>
+                  <p className='fontUltraSmall mb-0 fw600 red'>{curso.parceiros}</p>
+                </div>
               </div>
 
-              <img src={participantes} alt="matriculados" />
-              <p className='fw400 alignText'>{curso.matriculados}</p>
-
-              <img src={relogio} alt="duração" />
-              <p className='fw400 alignText'>{curso.duracao}</p>
-
-              <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} size={25} />
-              <p className='fw400 alignText'>{String((curso.avaliacao)).replace('.', ',')}</p>
+              <div className='cursoInfoBox'>
+                <div className='boxSingleInfoBox'>
+                  <img src={participantes} alt="matriculados" className='ajusteImg' />
+                  <p className='fw400 alignText'>{curso.matriculados}</p>
+                </div>
+                <div className='boxSingleInfoBox'>
+                  <img src={relogio} alt="duração" className='ajusteImg' />
+                  <p className='fw400 alignText'>{curso.duracao}</p>
+                </div>
+                <div className='boxSingleInfoBox'>
+                  <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} size={25} className='ajusteImgStar' />
+                  <p className='fw400 alignText'>{String((curso.avaliacao)).replace('.', ',')}</p>
+                </div>
+              </div>
               <Link to={`/modulosEducacionais/${curso.id}`} className='cursoButton bgDarkGrey white fontSmall2 fw600'>Ver módulo</Link>
             </div>
           ))}
         </div>
         <Link to='/modulosEducacionais' className='cursoButton bgDarkGrey white fontSmall2 fw600' id='verMais'>Ver mais</Link>
       </section>
-      <section className='containerPages mb-5'>
+      <section className='containerPages mb-lg-5'>
         <Link to='/parceiros' className='red fontMediumLarge parceirosTittle'>Parceiros</Link>
         <div className='bgGrey parceirosContainer'>
           <div className='parceiroContent'>

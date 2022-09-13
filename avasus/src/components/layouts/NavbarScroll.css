@@ -24,42 +24,42 @@
 }
 
 .navlink {
-    color: var(--navlink);
-    text-decoration: none;
-    transition: .2s;
+    color: var(--navlink) !important;
+    text-decoration: none !important;
+    transition: .2s !important;
 }
 
 .navlink:hover {
-    color: var(--navlinkHover);
+    color: var(--navlinkHover) !important;
 }
 
 .navButton {
-    text-decoration: none;
-    padding: 10px 40px;
-    border-radius: 20px;
+    text-decoration: none !important;
+    padding: 7px 40px !important;
+    border-radius: 20px !important;
 }
 
 .navButton1 {
-    color: var(--navlinkHover);
-    border: 1px solid var(--navlinkHover);
-    transition: .5s;
+    color: var(--navlinkHover) !important;
+    border: 1px solid var(--navlinkHover) !important;
+    transition: .5s !important;
 }
 
 .navButton1:hover {
-    background-color: var(--navlinkHover);
-    color: var(--white);
+    background-color: var(--navlinkHover) !important;
+    color: var(--white) !important;
 }
 
 .navButton2 {
-    background-color: var(--navlinkHover);
-    border: 1px solid var(--white);
-    transition: .5s;
+    background-color: var(--navlinkHover) !important;
+    border: 1px solid var(--white) !important;
+    transition: .5s !important;
 }
 
 .navButton2:hover {
-    color: var(--navlinkHover);
-    background-color: var(--white);
-    border: 1px solid var(--navlinkHover);
+    color: var(--navlinkHover) !important;
+    background-color: var(--white) !important;
+    border: 1px solid var(--navlinkHover) !important;
 }
 
 #inputSearch:focus {
@@ -73,8 +73,7 @@
         margin-bottom: 10px;
     }
     .navButton {
-        display: block;
-        max-width: 100%;
+        margin-bottom: 5px !important;
     }
 
     .logoPrincipal {

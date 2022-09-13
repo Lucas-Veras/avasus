@@ -2,11 +2,12 @@
     margin-top: 100px;
 }
 
-.breadcrumbColor ol li a{
+.breadcrumbColor ol li a {
     color: #E0E0E0 !important;
 }
 
-.breadcrumbColor ol li,  .breadcrumbColor ol li::before{
+.breadcrumbColor ol li,
+.breadcrumbColor ol li::before {
     color: var(--white) !important;
 }
 
@@ -45,6 +46,7 @@
     align-items: center;
     gap: 10px;
     margin-left: 30px;
+    margin: 0 auto;
 }
 
 .imgCredito {
@@ -63,14 +65,17 @@
     .boxSingleInfo {
         gap: 5px;
     }
+
+    
+}
+
+@media (max-width:1100px) {
+    .boxSingleInfo {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 900px) {
-    .boxSingleInfo {
-        flex-direction: column;
-        margin-left: 0px;
-    }
-
     .cursoTitles {
         padding-bottom: 0px;
     }
