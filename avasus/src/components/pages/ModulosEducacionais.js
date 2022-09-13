@@ -84,7 +84,7 @@ const ModulosEducacionais = () => {
           <button onClick={() => selectTab(7)} className={selectedTab === 7 ? "fontSmall ativo fw600" : "fontSmall fw600"}>OPAS</button>
         </div>
         <div className='text-start'>
-          <p className='fw400 fst-italic colorQtdPages mb-4'>{endIndex < currentCursos.length ? currentCursos.length : endIndex} de {cursos.length} resultados</p>
+          <p className='fw400 fst-italic colorQtdPages mb-4'>{currentPage != pages - 1 ? endIndex : cursos.length} de {cursos.length} resultados</p>
         </div>
         {!removeLoading && <Loading />}
         <div className='parceirosContainerPage gapCursos  mb-5'>
