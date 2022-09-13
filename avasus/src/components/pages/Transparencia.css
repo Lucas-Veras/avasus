@@ -1,0 +1,43 @@
+.transparenciaBox1,
+.singleContainerUsuarios {
+    padding: 30px 40px;
+    border-radius: 20px;
+}
+
+.containerDadosGerais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 60px;
+    justify-content: center;
+}
+
+.containerUsuarios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+
+@media (max-width: 1200px) {
+    .containerUsuarios {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 800px) {
+    .containerDadosGerais {
+        gap: 15px;
+    }
+
+    .transparenciaBox1,
+    .singleContainerUsuarios {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .containerDadosGerais {
+        gap: 5px;
+    }
+}

@@ -79,6 +79,10 @@
   margin-bottom: 60px;
 }
 
+.mb30 {
+  margin-bottom: 30px;
+}
+
 .mt20 {
   margin-top: 20px;
 }
@@ -172,6 +176,10 @@
     font-size: 1.2rem;
   }
 
+  .fontNormal {
+    font-size: 0.9rem;
+  }
+
   .fontSmall2 {
     font-size: 0.875rem;
   }
@@ -200,6 +208,10 @@
 
   .mb60 {
     margin-bottom: 30px;
+  }
+
+  .mb30 {
+    margin-bottom: 15px;
   }
 
   .mt60 {

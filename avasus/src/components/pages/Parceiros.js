@@ -33,7 +33,7 @@ const Parceiros = () => {
       </Breadcrumb>
       <section className='text-start'>
         <h1 className='red fontMediumLarge fw600 mb-2'>Nossos parceiros</h1>
-        <p className='fw400 fst-italic colorQtdPages mb-2'>{currentPage != pages - 1 ? endIndex : parceiros.length} de {parceiros.length} resultados</p>
+        <p className='fw400 fst-italic colorQtdPages mb-2'>{currentPage !== pages - 1 ? endIndex : parceiros.length} de {parceiros.length} resultados</p>
 
         {!removeLoading &&
           <div className='text-center'>
