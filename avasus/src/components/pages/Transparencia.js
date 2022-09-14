@@ -37,9 +37,9 @@ const Transparencia = () => {
       <section className='transparenciaBox1 bgGrey mb30'>
         <h2 className='red fontMedium2 fw700 mb-xl-5 mb-3'>Dados Gerais</h2>
         <div className='containerDadosGerais'>
-          <TransparenciaDado img={participantes} text="Total de usuários registrados" dado={transparencia.usuarios_registrados} />
-          <TransparenciaDado img={inscricoes} text="Inscrições realizadas" dado={transparencia.incricoes_realizadas} />
-          <TransparenciaDado img={cursos} text="Cursos ativos" dado={transparencia.cursos_ativos} />
+          <TransparenciaDado img={participantes} text="Total de usuários registrados" dado={(transparencia.usuarios_registrados).toLocaleString('de-DE')} />
+          <TransparenciaDado img={inscricoes} text="Inscrições realizadas" dado={(transparencia.incricoes_realizadas).toLocaleString('de-DE')} />
+          <TransparenciaDado img={cursos} text="Cursos ativos" dado={(transparencia.cursos_ativos).toLocaleString('de-DE')} />
           <TransparenciaDado img={certificacao} text="Direito à Certificação" dado={transparencia.direito_certificacao} />
           <TransparenciaDado img={investimento1} text="Investimento médio por curso" dado={transparencia.investimento_medio_curso} />
           <TransparenciaDado img={investimento2} text="Investimento médio por aluno" dado={transparencia.investimento_medio_aluno} />
