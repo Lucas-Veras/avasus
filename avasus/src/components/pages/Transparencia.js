@@ -10,10 +10,10 @@ import investimento2 from '../../assets/investimento2.svg';
 import './Transparencia.css';
 import PieChart from '../layouts/PieChart';
 import UsuariosCurso from '../layouts/UsuariosCurso';
+import Map from '../layouts/Map'
 const Transparencia = () => {
   const [transparencia, setTransparencia] = useState([]);
   const [usuariosCurso, setUsuariosCurso] = useState([]);
-  const [usuariosEstado, setUsuariosEstado] = useState([]);
 
   const cor = ['bgWhite', 'bgRed', 'bgDarkGrey', 'bgDarkBlue']
 
@@ -23,7 +23,6 @@ const Transparencia = () => {
       .then(data => {
         setTransparencia(data.dados_gerais)
         setUsuariosCurso(data.usuarios_por_curso)
-        setUsuariosEstado(data.usuarios_por_estado)
       })
   }, [])
 
@@ -37,9 +36,9 @@ const Transparencia = () => {
       <section className='transparenciaBox1 bgGrey mb30'>
         <h2 className='red fontMedium2 fw700 mb-xl-5 mb-3'>Dados Gerais</h2>
         <div className='containerDadosGerais'>
-          <TransparenciaDado img={participantes} text="Total de usuários registrados" dado={(transparencia.usuarios_registrados).toLocaleString('de-DE')} />
-          <TransparenciaDado img={inscricoes} text="Inscrições realizadas" dado={(transparencia.incricoes_realizadas).toLocaleString('de-DE')} />
-          <TransparenciaDado img={cursos} text="Cursos ativos" dado={(transparencia.cursos_ativos).toLocaleString('de-DE')} />
+          <TransparenciaDado img={participantes} text="Total de usuários registrados" dado={(transparencia.usuarios_registrados)?.toLocaleString('de-DE')} />
+          <TransparenciaDado img={inscricoes} text="Inscrições realizadas" dado={(transparencia.incricoes_realizadas)?.toLocaleString('de-DE')} />
+          <TransparenciaDado img={cursos} text="Cursos ativos" dado={(transparencia.cursos_ativos)?.toLocaleString('de-DE')} />
           <TransparenciaDado img={certificacao} text="Direito à Certificação" dado={transparencia.direito_certificacao} />
           <TransparenciaDado img={investimento1} text="Investimento médio por curso" dado={transparencia.investimento_medio_curso} />
           <TransparenciaDado img={investimento2} text="Investimento médio por aluno" dado={transparencia.investimento_medio_aluno} />
@@ -57,13 +56,16 @@ const Transparencia = () => {
             />
           </div>
           {usuariosCurso && usuariosCurso.map((curso, index) => (
-            <UsuariosCurso curso={curso.curso} usuarios={curso.usuarios} color={cor[index]} />
+            <UsuariosCurso key={curso.curso} curso={curso.curso} usuarios={(curso.usuarios)?.toLocaleString('de-DE')} color={cor[index]} />
           ))}
         </div>
         <div className='singleContainerUsuarios bgGrey'>
           <h2 className='red fontMedium2 fw600 mb-md-4 mb-3'>Usuários por Estado</h2>
+          <div className='tamanho mb-md-5 mb-3'>
+            <Map />
+          </div>
           {usuariosCurso && usuariosCurso.map((curso, index) => (
-            <UsuariosCurso curso={curso.curso} usuarios={curso.usuarios} color={cor[index]} />
+            <UsuariosCurso key={curso.curso} curso={curso.curso} usuarios={(curso.usuarios)?.toLocaleString('de-DE')} color={cor[index]} />
           ))}
         </div>
       </section>

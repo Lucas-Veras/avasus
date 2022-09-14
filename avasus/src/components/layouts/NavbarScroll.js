@@ -17,7 +17,7 @@ const NavbarScroll = () => {
             <Nav.Link href='#' className='navlink fw600 fontSmall pe-xxl-2'>Sobre Nós</Nav.Link>
             <Nav.Link href='/modulosEducacionais' className='navlink fw600 fontSmall pe-xxl-2'>Cursos</Nav.Link>
             <Nav.Link href='/parceiros' className='navlink fw600 fontSmall pe-xxl-2'>Parceiros</Nav.Link>
-            <Nav.Link href='transparencia' className='navlink fw600 fontSmall pe-xxl-2'>Transparência</Nav.Link>
+            <Nav.Link href='/transparencia' className='navlink fw600 fontSmall pe-xxl-2'>Transparência</Nav.Link>
             <Nav.Link href='#' className='navlink fw600 fontSmall pe-xxl-2'>Contato</Nav.Link>
           </Nav>
 
