@@ -17,7 +17,7 @@ const Map = () => {
 
     useEffect(() => {
         fetch("http://localhost:3004/transparecia")
-            .then((res) => res.json())
+            .then(res => res.json())
             .then(data => {
                 setUsuariosEstado(data.usuarios_por_estado)
             })
@@ -25,15 +25,15 @@ const Map = () => {
 
     useEffect(() => {
         fetch("https://code.highcharts.com/mapdata/countries/br/br-all.geo.json")
-            .then((res) => res.json())
+            .then(res => res.json())
             .then(data => {
                 setLocalizacao(data.features)
                
             })
     }, [])
 
-    localizacao.map((estado) => {
-        usuariosEstado.map((usuarios) => {
+    localizacao.forEach(estado => {
+        usuariosEstado.forEach(usuarios => {
             if (estado.properties['hc-a2'] === usuarios.estados) {
                 data.push({
                     z: usuarios?.usuarios_totais,

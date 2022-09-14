@@ -100,7 +100,7 @@ const ModulosEducacionais = () => {
               <div className='containerCursoInfo mb-3'>
                 <div className='containerElementsInfo'>
                   <img src={participantes} alt="matriculados" />
-                  <p className='fw400 alignText'>{curso.matriculados}</p>
+                  <p className='fw400 alignText'>{(curso.matriculados)?.toLocaleString('de-DE')}</p>
 
                   <img src={relogio} alt="duração" />
                   <p className='fw400 alignText'>{curso.duracao}</p>

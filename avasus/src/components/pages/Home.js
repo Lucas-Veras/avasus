@@ -74,7 +74,7 @@ const Home = () => {
               <div className='cursoInfoBox'>
                 <div className='boxSingleInfoBox'>
                   <img src={participantes} alt="matriculados" className='ajusteImg' />
-                  <p className='fw400 alignText'>{curso.matriculados}</p>
+                  <p className='fw400 alignText'>{(curso.matriculados)?.toLocaleString('de-DE')}</p>
                 </div>
                 <div className='boxSingleInfoBox'>
                   <img src={relogio} alt="duração" className='ajusteImg' />
