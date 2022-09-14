@@ -9,10 +9,13 @@ import investimento1 from '../../assets/investimento1.svg';
 import investimento2 from '../../assets/investimento2.svg';
 import './Transparencia.css';
 import PieChart from '../layouts/PieChart';
+import UsuariosCurso from '../layouts/UsuariosCurso';
 const Transparencia = () => {
   const [transparencia, setTransparencia] = useState([]);
   const [usuariosCurso, setUsuariosCurso] = useState([]);
   const [usuariosEstado, setUsuariosEstado] = useState([]);
+
+  const cor = ['bgWhite', 'bgRed', 'bgDarkGrey', 'bgDarkBlue']
 
   useEffect(() => {
     fetch("http://localhost:3004/transparecia")
@@ -23,9 +26,6 @@ const Transparencia = () => {
         setUsuariosEstado(data.usuarios_por_estado)
       })
   }, [])
-
-  const data = []
-
 
   return (
     <section className='containerPages' id='marginTopPages'>
@@ -48,15 +48,23 @@ const Transparencia = () => {
       <section className='containerUsuarios mb-lg-5 mb-3'>
         <div className='singleContainerUsuarios bgGrey'>
           <h2 className='red fontMedium2 fw600 mb-md-4 mb-3'>Usuários por curso</h2>
-          <PieChart
-            dado1={(usuariosCurso[1]?.usuarios)}
-            dado2={(usuariosCurso[1]?.usuarios)}
-            dado3={(usuariosCurso[2]?.usuarios)}
-            dado4={(usuariosCurso[3]?.usuarios)}
-          />
+          <div className='tamanho mb-md-5 mb-3'>
+            <PieChart
+              dado1={(usuariosCurso[1]?.usuarios)}
+              dado2={(usuariosCurso[1]?.usuarios)}
+              dado3={(usuariosCurso[2]?.usuarios)}
+              dado4={(usuariosCurso[3]?.usuarios)}
+            />
+          </div>
+          {usuariosCurso && usuariosCurso.map((curso, index) => (
+            <UsuariosCurso curso={curso.curso} usuarios={curso.usuarios} color={cor[index]} />
+          ))}
         </div>
         <div className='singleContainerUsuarios bgGrey'>
           <h2 className='red fontMedium2 fw600 mb-md-4 mb-3'>Usuários por Estado</h2>
+          {usuariosCurso && usuariosCurso.map((curso, index) => (
+            <UsuariosCurso curso={curso.curso} usuarios={curso.usuarios} color={cor[index]} />
+          ))}
         </div>
       </section>
     </section>

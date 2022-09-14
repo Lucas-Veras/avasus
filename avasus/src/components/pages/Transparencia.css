@@ -17,6 +17,13 @@
     gap: 30px;
 }
 
+.tamanho {
+    display: flex;
+    justify-content: center;
+    max-width: 375px;
+    margin: 0 auto;
+}
+
 
 @media (max-width: 1200px) {
     .containerUsuarios {
@@ -30,6 +37,9 @@
         gap: 15px;
     }
 
+    .tamanho {
+        max-width: 250px;
+    }
     .transparenciaBox1,
     .singleContainerUsuarios {
         padding: 15px 10px;
