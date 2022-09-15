@@ -28,7 +28,7 @@ const Map = () => {
             .then(res => res.json())
             .then(data => {
                 setLocalizacao(data.features)
-               
+
             })
     }, [])
 
@@ -53,6 +53,9 @@ const Map = () => {
         },
         title: {
             text: ''
+        },
+        accessibility: {
+            enabled: false
         },
         legend: {
             enabled: false
