@@ -13,7 +13,10 @@ const Map = () => {
 
     const [usuariosEstado, setUsuariosEstado] = useState([]);
     const [localizacao, setLocalizacao] = useState([]);
-    const data = []
+    const suicidio = []
+    const pai = []
+    const covid = []
+    const outros = []
 
     useEffect(() => {
         fetch("http://localhost:3004/transparecia")
@@ -34,14 +37,35 @@ const Map = () => {
 
     localizacao.forEach(estado => {
         usuariosEstado.forEach(usuarios => {
-            if (estado.properties['hc-a2'] === usuarios.estados) {
-                data.push({
+            if (estado?.properties['hc-a2'] === 'PA') {
+                suicidio.push({
                     z: usuarios?.usuarios_totais,
                     keyword: (usuarios?.usuarios_totais)?.toLocaleString('de-DE') + ' usuários',
                     lat: Number(estado?.properties.latitude),
                     lon: Number(estado?.properties.longitude)
                 })
-            }
+            } else if (estado?.properties['hc-a2'] === 'AM' || estado?.properties['hc-a2'] === 'MT') {
+                pai.push({
+                    z: usuarios?.usuarios_totais,
+                    keyword: (usuarios?.usuarios_totais)?.toLocaleString('de-DE') + ' usuários',
+                    lat: Number(estado?.properties.latitude),
+                    lon: Number(estado?.properties.longitude)
+                })
+            } else if (estado?.properties['hc-a2'] === 'SP' || estado?.properties['hc-a2'] === 'MG' || estado?.properties['hc-a2'] === 'BA') {
+                covid.push({
+                    z: usuarios?.usuarios_totais,
+                    keyword: (usuarios?.usuarios_totais)?.toLocaleString('de-DE') + ' usuários',
+                    lat: Number(estado?.properties.latitude),
+                    lon: Number(estado?.properties.longitude)
+                })
+            } else {
+                outros.push({
+                    z: usuarios?.usuarios_totais,
+                    keyword: (usuarios?.usuarios_totais)?.toLocaleString('de-DE') + ' usuários',
+                    lat: Number(estado?.properties.latitude),
+                    lon: Number(estado?.properties.longitude)
+                })
+            } 
         })
     })
 
@@ -80,8 +104,34 @@ const Map = () => {
         }, {
             type: 'mapbubble',
             name: 'Cities',
-            color: '#4169E1',
-            data: data,
+            color: '#FFFFFF',
+            data: suicidio,
+            minSize: 4,
+            maxSize: 25,
+            cursor: 'pointer',
+        }, {
+            type: 'mapbubble',
+            name: 'Cities',
+            color: '#F6303F',
+            data: covid,
+            minSize: 4,
+            maxSize: 25,
+            cursor: 'pointer',
+        },
+        {
+            type: 'mapbubble',
+            name: 'Cities',
+            color: '#707070',
+            data: pai,
+            minSize: 4,
+            maxSize: 25,
+            cursor: 'pointer',
+        },
+        {
+            type: 'mapbubble',
+            name: 'Cities',
+            color: '#2F2E41',
+            data: outros,
             minSize: 4,
             maxSize: 25,
             cursor: 'pointer',
