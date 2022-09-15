@@ -9,11 +9,11 @@ const NavbarScroll = () => {
   return (
     <Navbar className='bgWhite ps-xxl-5 ps-xl-2 ps-2 pm-4 pt-4 pb-4 pe-xxl-5 pe-2 sombra' expand="xxl" fixed="top">
       <Container fluid>
-        <Navbar.Brand className='ps-xxl-4 ps-2 me-3' href='/' title='Avasus'><img src={logo} alt="Avasus" className='logoPrincipal'/></Navbar.Brand>
+        <Navbar.Brand className='ps-xxl-4 ps-2 me-3' href='/' title='Avasus'><img src={logo} alt="Avasus" className='logoPrincipal' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto my-2 my-lg-0">
-            <Nav.Link href='/' className='navlink fw600 fontSmall pe-xxl-2'>Início</Nav.Link>
+            <Nav.Link href='/' className='navlink fw600 fontSmall pe-xxl-2' >Início</Nav.Link>
             <Nav.Link href='#' className='navlink fw600 fontSmall pe-xxl-2'>Sobre Nós</Nav.Link>
             <Nav.Link href='/modulosEducacionais' className='navlink fw600 fontSmall pe-xxl-2'>Cursos</Nav.Link>
             <Nav.Link href='/parceiros' className='navlink fw600 fontSmall pe-xxl-2'>Parceiros</Nav.Link>

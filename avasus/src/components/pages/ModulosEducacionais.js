@@ -69,7 +69,7 @@ const ModulosEducacionais = () => {
     <section className='containerPages' id='marginTopPages'>
       <Breadcrumb className='mb-4'>
         <Breadcrumb.Item href='/'>Início</Breadcrumb.Item>
-        <Breadcrumb.Item href='/'>Cursos</Breadcrumb.Item>
+        <Breadcrumb.Item href='/modulosEducacionais'>Cursos</Breadcrumb.Item>
         <Breadcrumb.Item active>Módulos</Breadcrumb.Item>
       </Breadcrumb>
       <section className='text-center'>
