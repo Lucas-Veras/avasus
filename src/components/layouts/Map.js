@@ -19,7 +19,7 @@ const Map = () => {
     const outros = []
 
     useEffect(() => {
-        fetch("http://localhost:3004/transparecia")
+        fetch("https://avasus-api.vercel.app/transparecia")
             .then(res => res.json())
             .then(data => {
                 setUsuariosEstado(data.usuarios_por_estado)
@@ -65,7 +65,7 @@ const Map = () => {
                     lat: Number(estado?.properties.latitude),
                     lon: Number(estado?.properties.longitude)
                 })
-            } 
+            }
         })
     })
 

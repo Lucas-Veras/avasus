@@ -13,7 +13,7 @@ const Curso = () => {
     const [creditos, setCreditos] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3004/cursos/${id}`)
+        fetch(`https://avasus-api.vercel.app/cursos/${id}`)
             .then(res => res.json())
             .then((data) => {
                 setCurso(data)

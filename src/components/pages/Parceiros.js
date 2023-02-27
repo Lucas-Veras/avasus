@@ -16,7 +16,7 @@ const Parceiros = () => {
   const currentParceiros = parceiros.slice(startIndex, endIndex);
 
   useEffect(() => {
-    fetch("http://localhost:3004/parceiros")
+    fetch("https://avasus-api.vercel.app/parceiros")
       .then((res) => res.json())
       .then((data) => {
         setParceiros(data)

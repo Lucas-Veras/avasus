@@ -12,9 +12,9 @@ const Home = () => {
   const [selectedTab, setSelectedTab] = useState(1)
   const [removeLoading, setRemoveLoading] = useState(false)
 
-  const urlMaisPopoulares = "http://localhost:3004/cursos?_sort=matriculados&_order=desc&_limit=3"
-  const urlMelhoresAvaliados = "http://localhost:3004/cursos?_sort=avaliacao&_order=desc&_limit=3"
-  const urlMaisRecentes = "http://localhost:3004/cursos?_sort=criado_em&_order=desc&_limit=3"
+  const urlMaisPopoulares = "https://avasus-api.vercel.app/cursos?_sort=matriculados&_order=desc&_limit=3"
+  const urlMelhoresAvaliados = "https://avasus-api.vercel.app/cursos?_sort=avaliacao&_order=desc&_limit=3"
+  const urlMaisRecentes = "https://avasus-api.vercel.app/cursos?_sort=criado_em&_order=desc&_limit=3"
 
   const selectTab = (index) => {
     setCursos([])

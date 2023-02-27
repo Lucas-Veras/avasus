@@ -21,7 +21,7 @@ const ModulosEducacionais = () => {
   const endIndex = startIndex + cursoPerPage;
   const currentCursos = cursos.slice(startIndex, endIndex);
 
-  const url = "http://localhost:3004/cursos?cateroria="
+  const url = "https://avasus-api.vercel.app/cursos?cateroria="
 
   const selectTab = (index) => {
     setCursos([])

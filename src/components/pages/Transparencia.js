@@ -18,7 +18,7 @@ const Transparencia = () => {
   const cor = ['bgWhite', 'bgRed', 'bgDarkGrey', 'bgDarkBlue']
 
   useEffect(() => {
-    fetch("http://localhost:3004/transparecia")
+    fetch("https://avasus-api.vercel.app/transparecia")
       .then((res) => res.json())
       .then(data => {
         setTransparencia(data.dados_gerais)
