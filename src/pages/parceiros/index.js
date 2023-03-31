@@ -1,8 +1,8 @@
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import './Parceiros.css';
+import './styles.css';
 import { useState, useEffect } from 'react'
 import Pagination from 'react-bootstrap/Pagination';
-import Loading from '../layouts/Loading';
+import Loading from '../../components/loading';
 
 const Parceiros = () => {
   const [parceiros, setParceiros] = useState([]);

@@ -1,11 +1,13 @@
-import Slider from '../layouts/Slider'
+
 import { useState, useEffect } from 'react'
-import './Home.css';
+import './styles.css';
 import participantes from '../../assets/participantes.svg'
 import relogio from '../../assets/relogio.svg';
 import { Link } from 'react-router-dom';
-import Loading from '../layouts/Loading';
 import { Rating } from 'react-simple-star-rating'
+import Slider from '../../components/slider';
+import Loading from '../../components/loading'
+import ParceiroContent from '../../components/parceiroContent';
 
 const Home = () => {
   const [cursos, setCursos] = useState([])
@@ -14,7 +16,7 @@ const Home = () => {
 
   const urlMaisPopoulares = "https://avasus-api.vercel.app/cursos?_sort=matriculados&_order=desc&_limit=3"
   const urlMelhoresAvaliados = "https://avasus-api.vercel.app/cursos?_sort=avaliacao&_order=desc&_limit=3"
-  const urlMaisRecentes = "https://avasus-api.vercel.app/cursos?_sort=criado_em&_order=desc&_limit=3"
+  const urlMaisRecentes = "s-api.vercel.app/cursos?_sort=criado_em&_order=desc&_limit=3"
 
   const selectTab = (index) => {
     setCursos([])
@@ -94,22 +96,22 @@ const Home = () => {
       <section className='containerPages mb-lg-5'>
         <Link to='/parceiros' className='red fontMediumLarge parceirosTittle'>Parceiros</Link>
         <div className='bgGrey parceirosContainer'>
-          <div className='parceiroContent'>
-            <h2 className='fontMedium2 fw600 size40'>Governo do RN</h2>
-            <p className='fontSmall2 fw600 size40'>Governo do Estado do Rio Grande do Norte.</p>
-          </div>
-          <div className='parceiroContent'>
-            <h2 className='fontMedium2 fw600 size40'>SESAP</h2>
-            <p className='fontSmall2 fw600 size40'>Secretaria de Saúde Pública do Estado do Rio Grande do Norte.</p>
-          </div>
-          <div className='parceiroContent'>
-            <h2 className='fontMedium2 fw600 size40'>UFRN</h2>
-            <p className='fontSmall2 fw600 size40'>Universidade Federal do Rio Grande do Norte.</p>
-          </div>
-          <div className='parceiroContent'>
-            <h2 className='fontMedium2 fw600 size40'>HUOL</h2>
-            <p className='fontSmall2 fw600 size40'>Hospital Onofre Lopes: Hospital Universitário da UFRN (Universidade Federal do Rio Grande do Norte). </p>
-          </div>
+          <ParceiroContent
+            title="Governo do RN"
+            desc="Governo do Estado do Rio Grande do Norte."
+          />
+          <ParceiroContent
+            title="SESAP"
+            desc="Secretaria de Saúde Pública do Estado do Rio Grande do Norte."
+          />
+          <ParceiroContent
+            title="UFRN"
+            desc="Universidade Federal do Rio Grande do Norte."
+          />
+          <ParceiroContent
+            title="HUOL"
+            desc="Hospital Onofre Lopes: Hospital Universitário da UFRN (Universidade Federal do Rio Grande do Norte)."
+          />
         </div>
       </section>
     </>

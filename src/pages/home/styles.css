@@ -140,11 +140,6 @@
         text-decoration: underline;
     }
 
-    .parceiroContent {
-        display: flex;
-        align-items: center;
-    }
-
     .cursoContainer,
     .cursoTitleBox,
     .parceiroContent {

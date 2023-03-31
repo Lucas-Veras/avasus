@@ -1,4 +1,4 @@
-import './TransparenciaDado.css';
+import './styles.css';
 
 const TransparenciaDado = ({img, text, dado}) => {
     return (

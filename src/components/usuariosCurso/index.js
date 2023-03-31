@@ -1,4 +1,4 @@
-import './UsuariosCurso.css';
+import './styles.css';
 
 const UsuariosCurso = ({ curso, usuarios, color }) => {
     return (

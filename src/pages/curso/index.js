@@ -1,4 +1,4 @@
-import './Curso.css';
+import './styles.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';

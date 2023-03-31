@@ -1,4 +1,4 @@
-import './Footer.css';
+import './styles.css';
 import lais from '../../assets/lais.svg';
 import ufrn from '../../assets/ufrn.svg';
 import facebook from '../../assets/facebook.svg';

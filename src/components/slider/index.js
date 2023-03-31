@@ -6,7 +6,7 @@ import slider3 from '../../assets/slider3.png';
 import avasusSlider from '../../assets/avasusSlider.svg';
 import sliderText from '../../assets/slider1Text.svg';
 import barra from '../../assets/barra.svg';
-import './Slider.css';
+import './styles.css';
 
 export default function Slider() {
     const [index, setIndex] = useState(0);

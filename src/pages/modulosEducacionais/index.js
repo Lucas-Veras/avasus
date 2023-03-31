@@ -4,9 +4,10 @@ import participantes from '../../assets/participantes.svg';
 import relogio from '../../assets/relogio.svg';
 import { Rating } from 'react-simple-star-rating';
 import { Link } from 'react-router-dom';
-import Loading from '../layouts/Loading';
+import Loading from '../../components/loading';
 import Pagination from 'react-bootstrap/Pagination';
-import './ModulosEducacionais.css';
+import './styles.css';
+import { api } from '../../services/api';
 
 const ModulosEducacionais = () => {
   const [cursos, setCursos] = useState([])
@@ -21,7 +22,7 @@ const ModulosEducacionais = () => {
   const endIndex = startIndex + cursoPerPage;
   const currentCursos = cursos.slice(startIndex, endIndex);
 
-  const url = "https://avasus-api.vercel.app/cursos?cateroria="
+  const url = `${api}/cursos?cateroria=`
 
   const selectTab = (index) => {
     setCursos([])

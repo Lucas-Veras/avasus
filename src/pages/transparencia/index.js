@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import participantes from '../../assets/participantes.svg';
-import TransparenciaDado from '../layouts/TransparenciaDado';
+import TransparenciaDado from '../../components/transparencia';
 import certificacao from '../../assets/certificacao.svg';
 import cursos from '../../assets/cursos.svg';
 import inscricoes from '../../assets/inscricoes.svg';
 import investimento1 from '../../assets/investimento1.svg';
 import investimento2 from '../../assets/investimento2.svg';
-import './Transparencia.css';
-import PieChart from '../layouts/PieChart';
-import UsuariosCurso from '../layouts/UsuariosCurso';
-import Map from '../layouts/Map'
+import './styles.css';
+import PieChart from '../../components/pieChart';
+import UsuariosCurso from '../../components/usuariosCurso';
+import Map from '../../components/map'
 const Transparencia = () => {
   const [transparencia, setTransparencia] = useState([]);
   const [usuariosCurso, setUsuariosCurso] = useState([]);
