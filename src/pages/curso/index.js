@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import participantes from '../../assets/participantes.svg';
 import relogio from '../../assets/relogio.svg';
-import { Rating } from 'react-simple-star-rating';
 import calendario from '../../assets/calendario.svg'
+import RatingStarts from '../../components/ratingStars';
 
 const Curso = () => {
     const { id } = useParams()
@@ -53,7 +53,7 @@ const Curso = () => {
                         <p className='fw700 fontSmall2 alignText'>{curso.matriculados} alunos matriculados</p>
                     </div>
                     <div className='boxSingleInfo'>
-                        <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' className='alignStar' readonly={true} size={25} />
+                        <RatingStarts avg={curso.avaliacao} className='alignStar' />
                         <p className='fw700 fontSmall2 alignText'>{String((curso.avaliacao)).replace('.', ',')} ({curso.numero_avaliacoes} avaliações)</p>
                     </div>
 

@@ -4,10 +4,10 @@ import './styles.css';
 import participantes from '../../assets/participantes.svg'
 import relogio from '../../assets/relogio.svg';
 import { Link } from 'react-router-dom';
-import { Rating } from 'react-simple-star-rating'
 import Slider from '../../components/slider';
 import Loading from '../../components/loading'
 import ParceiroContent from '../../components/parceiroContent';
+import RatingStarts from '../../components/ratingStars';
 
 const Home = () => {
   const [cursos, setCursos] = useState([])
@@ -83,7 +83,7 @@ const Home = () => {
                   <p className='fw400 alignText'>{curso.duracao}</p>
                 </div>
                 <div className='boxSingleInfoBox'>
-                  <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} size={25} className='ajusteImgStar' />
+                  <RatingStarts avg={curso.avaliacao} id='mouseDefault' className='ajusteImgStar' />
                   <p className='fw400 alignText'>{String((curso.avaliacao)).replace('.', ',')}</p>
                 </div>
               </div>

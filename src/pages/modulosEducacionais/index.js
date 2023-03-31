@@ -2,12 +2,12 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useState, useEffect } from 'react'
 import participantes from '../../assets/participantes.svg';
 import relogio from '../../assets/relogio.svg';
-import { Rating } from 'react-simple-star-rating';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/loading';
 import Pagination from 'react-bootstrap/Pagination';
 import './styles.css';
 import { api } from '../../services/api';
+import RatingStarts from '../../components/ratingStars';
 
 const ModulosEducacionais = () => {
   const [cursos, setCursos] = useState([])
@@ -53,7 +53,7 @@ const ModulosEducacionais = () => {
         setRemoveLoading(true)
       })
       .catch((err) => console.log(err))
-  }, [])
+  }, [url])
 
   function buscarCursos(url) {
     fetch(url)
@@ -107,7 +107,7 @@ const ModulosEducacionais = () => {
                   <p className='fw400 alignText'>{curso.duracao}</p>
                 </div>
                 <div className='containerElementsInfo'>
-                  <Rating ratingValue={Number(curso.avaliacao) * 20} fillColor='#F6303F' id='mouseDefault' readonly={true} size={22} />
+                  <RatingStarts avg={curso.avaliacao} />
                   <p className='fw400 alignText'>{(curso.avaliacao).replace('.', ',')}</p>
                 </div>
               </div>
