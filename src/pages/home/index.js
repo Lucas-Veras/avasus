@@ -17,6 +17,8 @@ const Home = () => {
   const urlMaisPopoulares = "https://avasus-api.vercel.app/cursos?_sort=matriculados&_order=desc&_limit=3"
   const urlMelhoresAvaliados = "https://avasus-api.vercel.app/cursos?_sort=avaliacao&_order=desc&_limit=3"
   const urlMaisRecentes = "s-api.vercel.app/cursos?_sort=criado_em&_order=desc&_limit=3"
+  //nova task
+  //ryugfeyrfu
 
   const selectTab = (index) => {
     setCursos([])
